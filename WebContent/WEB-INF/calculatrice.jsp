@@ -12,20 +12,14 @@
 	<p>${ !empty param1 || !empty param2 ? 'le resultat de l operation est :' : '' }
 		${!empty param1 || !empty param2 ? resultat:''}</p>
 	<form method="post">
-		<input type="number" name="param1"> <input list="operations"
-			type="text" id="choix_operation">
-		<datalist id="operations">
-			<option value="+"><option value="-">
-  
-			<option value="/">
-  
-			<option value="%">
+		<input type="number" name="param1"> <select id="operation" name="operation">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select> <input type="number" name="param2"> <input type="submit"
+			style="height: 50px; width: 100px" value="Envoyer" name="envoyer">
 
-		</datalist> 
-<input type="number" name="param2">
-				<input type="submit" style="height: 50px; width: 100px"
-					value="Envoyer" name="envoyer">
-	
-			</form>
+	</form>
 </body>
 </html>
