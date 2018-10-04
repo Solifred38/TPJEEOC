@@ -13,8 +13,9 @@
 		${!empty param1 || !empty param2 ? resultat:''}</p>
 	<form method="post">
 		<input type="number" name="param1"> <select id="operation" name="operation">
-			<option value="+">+</option>
+			<option value="+" selected>+</option>
 			<option value="-">-</option>
+			<option value="*">*</option>
 			<option value="/">/</option>
 			<option value="%">%</option>
 		</select> <input type="number" name="param2"> <input type="submit"

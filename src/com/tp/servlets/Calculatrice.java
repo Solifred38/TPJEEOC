@@ -15,12 +15,8 @@ public class Calculatrice extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	int param1, param2, resultat = 0;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public Calculatrice() {
 		super();
-		// TODO Auto-generated constructor stub
 		param1 = param2 = resultat = 0;
 	}
 
@@ -30,7 +26,6 @@ public class Calculatrice extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		System.out.println("entree dans Get");
 		request.setAttribute("param1", request.getParameter("param1"));
 		request.setAttribute("param2", request.getParameter("param2"));
@@ -45,7 +40,6 @@ public class Calculatrice extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		System.out.println("entree dans Post");
 		String param = request.getParameter("param1");
 		param1 = param == "" ? 0 : Integer.parseInt(request.getParameter("param1"));
@@ -64,10 +58,12 @@ public class Calculatrice extends HttpServlet {
 			return param1 + param2;
 		case "-":
 			return param1 - param2;
+		case "*":
+			return param1 * param2;
 		case "/":
-			return param1 / param2;
+			if (param2 !=0) return param1 / param2;
 		case "%":
-			return param1 % param2;
+			if (param2 !=0) return param1 % param2;
 		}
 		return 0;
 
