@@ -26,7 +26,6 @@ public class Calculatrice extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("entree dans Get");
 		request.setAttribute("param1", request.getParameter("param1"));
 		request.setAttribute("param2", request.getParameter("param2"));
 		request.setAttribute("resultat", resultat);
@@ -40,15 +39,12 @@ public class Calculatrice extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("entree dans Post");
 		String param = request.getParameter("param1");
 		param1 = param == "" ? 0 : Integer.parseInt(request.getParameter("param1"));
 		param = request.getParameter("param2");
 		param2 = param == "" ? 0 : Integer.parseInt(request.getParameter("param2"));
 		String operation = request.getParameter("operation");
 		resultat = gereoperation(param1, param2,operation) ;
-		System.out.println(resultat);
-		System.out.println("operation " + operation);
 		doGet(request, response);
 	}
 
