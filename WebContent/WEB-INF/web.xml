@@ -6,6 +6,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Calculatrice</servlet-name>
-    <url-pattern>/tp</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>
